@@ -1,0 +1,102 @@
+{{! modal registro medico }}
+
+<div class='d-flex justify-content-end mt-3'>
+  <a href='/dashboard' class='btn btn-outline-secondary px-5 mx-2'>Dashboard</a>
+  <a href='/doctors/list' class='btn btn-outline-secondary px-5 mx-2'>Lista de
+    Médicos</a>
+</div>
+<h2 class='text-center m-3'>Atualização de dados do médico</h2>
+<form action='/doctors/attDoctor' method='post' class='form-group'>
+
+  <label for='nomeMedico'>Nome: </label>
+  <input
+    class='form-control mb-3'
+    type='text'
+    id='nomeMedico'
+    name='nomeMedico'
+    placeholder='Nome Completo'
+    value='{{resultadoMedico.nome}}'
+    minlength='3'
+    maxlength='45'
+    required
+  />
+  <label for='crm'>CRM: </label>
+  <input
+    class='form-control mb-3'
+    type='text'
+    id='crm'
+    name='crm'
+    placeholder='UF00000'
+    value='{{resultadoMedico.crm}}'
+    minlength='6'
+    maxlength='7'
+    required
+  />
+
+  <label for='emailMedico'>Email: </label>
+  <input
+    class='form-control mb-3'
+    type='email'
+    id='emailMedico'
+    name='emailMedico'
+    placeholder='nome@email.com'
+    value='{{resultadoMedico.email}}'
+    minlength='13'
+    maxlength='25'
+    required
+  />
+  {{#radioCheck resultadoMedico.atendimento 'PARTICULAR'}}
+    <div class='mb-3'>
+      <label for='atendimento'>Tipo de Atendimento: </label>
+      <div>
+        <input
+          type='radio'
+          id='atendimento1'
+          name='atendimento'
+          value='Particular'
+          checked
+          required
+        />
+        <label for='atendimento1'>Particular </label>
+        <input
+          type='radio'
+          id='atendimento2'
+          name='atendimento'
+          value='Convênio'
+          required
+        />
+        <label for='atendimento2'>Convênio </label>
+      </div>
+    </div>
+  {{else}}
+    <div class='mb-3'>
+      <label for='atendimento'>Tipo de Atendimento: </label>
+      <div>
+        <input
+          type='radio'
+          id='atendimento1'
+          name='atendimento'
+          value='Particular'
+          required
+        />
+        <label for='atendimento1'>Particular </label>
+        <input
+          type='radio'
+          id='atendimento2'
+          name='atendimento'
+          value='Convênio'
+          checked
+          required
+        />
+        <label for='atendimento2'>Convênio </label>
+      </div>
+    </div>
+  {{/radioCheck}}
+
+  <input name='idMedicoEditar' value='{{resultadoMedico._id}}' hidden />
+
+  <a href='/doctors/list' class='btn btn-secondary'>Cancelar</a>
+  <button type='submit' class='btn btn-primary'>Atualizar</button>
+
+</form>
+{{! fim modal registro médico }}

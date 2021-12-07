@@ -1,0 +1,85 @@
+{{! Inicio form para criar a collection de ativos }}
+<div class='d-flex justify-content-end my-3'>
+  <a href='/dashboard' class='btn btn-outline-secondary px-5 mx-2'>Dashboard</a>
+  <a href='/active/list' class='btn btn-outline-secondary px-5'>Lista de
+    Associados</a>
+</div>
+{{! Alerta }}
+{{#if sucesso}}
+  <div class='alert alert-success alert-dismissible' role='alert'>
+    {{msgAlerta}}
+    <a href='/active/list' class='btn-close'></a>
+  </div>
+{{/if}}
+<h2 class='text-center m-5'>Cadastro de Associado</h2>
+<form action='/active/ativar' method='post' class='container'>
+  <div class='row'>
+    <div class='col-lg-8 col-md-12 col-sm-12'>
+      <h2 class='text-center'>Médicos</h2>
+      <section class='conteudo container table-responsive'>
+        <table class='table table-hover' id='tabela'>
+          <thead>
+            <th>Selecione</th>
+            <th>CRM</th>
+            <th>Nome</th>
+            <th>Email Dr</th>
+            <th>Atendimento</th>
+          </thead>
+          <tbody id='tbody'>
+            {{#each resultadoMedico as |medico|}}
+              {{#if ativo}}{{else}}
+                <tr>
+                  <td><input
+                      type='radio'
+                      name='medicoCheck'
+                      value='{{medico._id}}'
+                      required
+                    /></td>
+                  <td>{{medico.crm}}</td>
+                  <td>Dr(a). {{medico.nome}}</td>
+                  <td>{{medico.email}}</td>
+                  <td>{{medico.atendimento}}</td>
+
+                </tr>
+              {{/if}}
+            {{/each}}
+
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+    <div class='col-lg-4 col-md-12 col-sm-12'>
+      <section class='conteudo container'>
+        <h2 class='text-center'>Especialidades</h2>
+        <table class='table table-hover' id='tabela'>
+          <thead>
+            <th>Selecione</th>
+            <th>Especialidade</th>
+          </thead>
+          <tbody id='tbody'>
+            {{#each resultadoEspecialidade as |especialidade|}}
+              <tr>
+                <td><input
+                    type='checkbox'
+                    name='especialidadeCheck'
+                    value='{{especialidade.especialidade}}'
+                  /></td>
+                <td>{{especialidade.especialidade}}</td>
+
+              </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='d-flex justify-content-center mt-3'>
+      <button type='reset' class='btn btn-secondary mx-3'>Limpar</button>
+      <button type='submit' class='btn btn-primary mx-3'>Cadastrar</button>
+    </div>
+  </div>
+</form>
+{{! Fim form para criar a collection de ativos }}

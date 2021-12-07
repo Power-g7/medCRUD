@@ -1,0 +1,101 @@
+{{! <nav class='container'>
+  <div class='row'>
+    <div class='col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center my-3'>
+      <a class='btn btn-outline-info p-5' href='/doctors/list'>Médico</a>
+    </div>
+    <div class='col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center my-3'>
+      <a
+        class='btn btn-outline-info p-5'
+        href='/specialty/list'
+      >Especialidade</a>
+    </div>
+    <div class='col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center my-3'>
+      <a class='btn btn-outline-info p-5' href='/active/list'>Associados</a>
+    </div>
+  </div>
+</nav> }}
+<div
+  id="view-height"
+  class="d-flex flex-column align-items-center justify-content-center"
+>
+  <h1 class="text-start m-5">Bem Vindo, {{nomeAcesso}}</h1>
+  <div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+      <a
+        class="card border-left-primary shadow h-100 py-2"
+        href="/doctors/list"
+      >
+        <div class="card-body text-center d-flex justify-content-center align-items-center">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                Médicos</div>
+              <div class="h5 mb-0 fw-light text-gray-800">{{result1}} médicos cadastrados</div>
+            </div>
+            <div class="col-auto">
+              <img src="img/doctor1.svg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <a
+        class="card border-left-primary shadow h-100 py-2"
+        href="/specialty/list"
+      >
+        <div class="card-body text-center d-flex justify-content-center align-items-center">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2 d-flex justify-content-center align-items-center">
+              <div>
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Especialidades</div>
+                <div class="h5 mb-0 fw-light text-gray-800">{{result2}} especialidades cadastradas</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <img src="img/estestoscopio.svg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <a class="card border-left-primary shadow h-100 py-2" href="/active/list">
+        <div class="card-body text-center d-flex justify-content-center align-items-center">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >Associados</div>
+              <div class="h5 mb-0 fw-light text-gray-800">{{result3}} médicos associados</div>
+            </div>
+            <div class="col-auto">
+              <img src="img/associados.svg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <a class="card border-left-primary shadow h-100 py-2" href="/userList">
+        <div class="card-body text-center d-flex justify-content-center align-items-center">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                Lista dos Usuários</div>
+              <div class="h5 mb-0 fw-light text-gray-800">Lista dos usuários dos médicos associados</div>
+            </div>
+            <div class="col-auto">
+              <img src="img/user.svg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+{{>footer}}

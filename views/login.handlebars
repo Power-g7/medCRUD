@@ -1,0 +1,56 @@
+{{! conforme escolhido na home vai aparecer uma caixa de login, será um form que fará a verificação no bd }}
+{{! caso a pessoa não tenha cadastro é redirecionada para a pagina de registro/cadastro }}
+{{!-- <h1>Login</h1> --}}
+
+{{!-- <form action='/login/enter' method='post'>
+  {{! <div class='mb-3'>
+    <label for='acesso1'>Tipo de Acesso: </label>
+    <div>
+      <input type='radio' id='acesso1' name='acesso' value='ADM' required />
+      <label for='acesso2'>Administrador </label>
+      <input type='radio' id='acesso2' name='acesso' value='USER' required />
+      <label for='atendimento2'>Usuário </label>
+    </div>
+  </div> }}
+  <label for='email'>Email: </label>
+  <input
+    class='form-control mb-3'
+    type='email'
+    id='email'
+    name='email'
+    placeholder='nome@email.com'
+    required
+  />
+  <label for='senha'>Senha: </label>
+  <input
+    class='form-control mb-3'
+    type='password'
+    id='senha'
+    name='senha'
+    placeholder='****'
+    required
+  />
+  <a href='/' class='btn btn-secondary'>Cancelar</a>
+  <button type='submit' class='btn btn-primary'>Entrar</button>
+</form> --}}
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <a class="bi bi-building" id="icon"></a>
+    </div>
+
+    <!-- Login Form -->
+    <form action='/login/enter' method='post' class="mt-4">
+      <input type="email" id="email" class="fadeIn second" name="email" placeholder="nome@email.com" required>
+      <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="****" required>
+      <div class="d-flex">
+      <a href='/' class='btn btn-secondary cancelar-login fadeIn fourth'>Cancelar</a>
+      <input type="submit" class="fadeIn fourth" value="Log In">
+      </div>
+    </form>
+  </div>
+</div>

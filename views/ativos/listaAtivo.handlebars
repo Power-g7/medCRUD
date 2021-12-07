@@ -1,0 +1,71 @@
+{{! Inicio Lista de Ativos }}
+<div class='d-flex justify-content-end mt-3'>
+  <a href='/dashboard' class='btn btn-outline-secondary px-5 mx-2'>Dashboard</a>
+  <a href='/active/register' class='btn btn-outline-secondary px-5'>Novo
+    Associado</a>
+</div>
+<h2 class='text-center m-5'>Lista de Associados</h2>
+<header class='d-flex justify-content-between mb-2'>
+  <form action='/search/doctor' method='get' class='input-group'>
+    <input
+      type='text'
+      name='searchDoctor'
+      placeholder='nome do médico'
+      class='input-group-text'
+    />
+    <button
+      type='submit'
+      class='btn btn-primary bi bi-search input-group-text'
+    ></button>
+  </form>
+  <form action='/search/specialty' method='get' class='input-group'>
+    <input
+      type='text'
+      name='searchSpecialty'
+      placeholder='especialidade'
+      class='input-group-text'
+    />
+    <button
+      type='submit'
+      class='btn btn-primary bi bi-search input-group-text'
+    ></button>
+  </form>
+</header>
+<section class='conteudo container table-responsive'>
+  <table class='table table-hover' id='tabela'>
+    <thead>
+
+      <th>CRM</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Atendimento</th>
+      <th>Especialidade</th>
+      <th class='text-center'>Ações</th>
+    </thead>
+    <tbody id='tbody'>
+      {{#each resultadoAtivos as |ativo|}}
+
+        <tr>
+
+          <td>{{ativo.medico.crm}}</td>
+          <td>Dr(a). {{ativo.medico.nome}}</td>
+          <td>{{ativo.medico.email}}</td>
+          <td>{{ativo.medico.atendimento}}</td>
+          <td>{{ativo.especialidade}}</td>
+          <td class='d-flex justify-content-evenly'>
+            <a
+              href='/active/editActive/{{ativo._id}}'
+              class='bi bi-pencil-square fs-4'
+            ></a>
+            <a
+              href='/active/desativeActive/{{ativo._id}}'
+              class='bi bi-trash fs-4'
+            ></a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+</section>
+{{! Fim da lista de Ativos }}

@@ -1,0 +1,48 @@
+<div class='d-flex justify-content-end mt-3'>
+  <a href='/dashboard' class='btn btn-outline-secondary px-5 mx-2'>Dashboard</a>
+  <a href='/specialty/register' class='btn btn-outline-secondary px-5 mx-2'>Nova
+    Especialidade</a>
+</div>
+<h2 class='text-center m-5'>Lista de Especialidades</h2>
+<header class='d-flex justify-content-center mb-2'>
+  <form action='/search/specialtys' method='get' class='input-group'>
+    <input
+      type='text'
+      name='searchSpecialty'
+      placeholder='especialidade'
+      class='input-group-text'
+    />
+    <button
+      type='submit'
+      class='btn btn-primary bi bi-search input-group-text'
+    ></button>
+  </form>
+</header>
+<section class='conteudo container'>
+  <table class='table table-hover' id='tabela'>
+    <thead>
+
+      <th>Especialidade</th>
+      <th class='text-center'>Ações</th>
+    </thead>
+    <tbody id='tbody'>
+      {{#each resultadoEspecialidade as |especialidade|}}
+        <tr>
+
+          <td>{{especialidade.especialidade}}</td>
+          <td class='d-flex justify-content-evenly'>
+            <a
+              href='/specialty/editSpecialty/{{_id}}'
+              class='bi bi-pencil-square fs-4'
+            ></a>
+            <a
+              href='/specialty/deleteSpecialty/{{_id}}'
+              class='bi bi-trash fs-4'
+            ></a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+</section>

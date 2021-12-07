@@ -1,0 +1,52 @@
+{{! modal registro especialidade }}
+<div class='d-flex justify-content-end mt-3'>
+  <a href='/dashboard' class='btn btn-outline-secondary px-5 mx-2'>Dashboard</a>
+  <a href='/specialty/list' class='btn btn-outline-secondary px-5 mx-2'>Lista de
+    Especialidades</a>
+</div>
+<h2 class='text-center m-3'>Nova Especialidade</h2>
+<form action='/specialty/addSpecialty' method='post' class='form-group'>
+  <label for='especialidade'>Especialidade: </label>
+  <input
+    class='form-control mb-3'
+    type='text'
+    id='especialidade'
+    name='especialidade'
+    placeholder='Digite a especialidade'
+    value='{{resultadoEspecialidade.especialidade}}'
+    minlength='5'
+    maxlength='45'
+    required
+  />
+  <input
+    type='hidden'
+    name='idEspecialidadeEditar'
+    value='{{resultadoEspecialidade._id}}'
+  />
+  {{#if botaoLimpar}}
+    <button type='reset' class='btn btn-secondary'>Limpar</button>
+  {{else}}
+    <a href='/specialty/list' class='btn btn-secondary'>Cancelar</a>
+  {{/if}}
+  <button
+    type='submit'
+    class='btn btn-primary'
+  >{{conteudoBotaoEspecialidade}}</button>
+</form>
+{{! fim modal registro especialidade }}
+
+{{! Alerta Positivo}}
+{{#if sucesso}}
+  <div class='alert alert-success alert-dismissible' role='alert'>
+    {{msgAlerta}}
+    <a href='/specialty/list' class='btn-close'></a>
+  </div>
+{{/if}}
+{{! Alerta Negativo}}
+{{#if fracasso}}
+
+  <div class='alert alert-danger alert-dismissible' role='alert'>
+    {{msgAlerta}}
+    <a href='/specialty/list' class='btn-close'></a>
+  </div>
+{{/if}}

@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-end mt-3">
+<a href='/dashboard' class='btn btn-outline-secondary px-5 mx-2 '>Dashboard</a>
+<a href='/doctors/register' class='btn btn-outline-secondary px-5 mx-2'>Novo Médico</a>
+</div>
+<h2 class='text-center m-3'>Lista de médicos</h2>
+<header class="d-flex justify-content-evenly mb-2">
+  <form action='/search/doctors' method='get' class='input-group'>
+  <input
+    type='text'
+    name='searchDoctor'
+    placeholder='nome do médico'
+    class='input-group-text'
+  />
+  <button
+    type='submit'
+    class='btn btn-primary bi bi-search input-group-text'
+  ></button>
+</form>
+
+</header>
+<section class='conteudo container'>
+  <table class='table table-hover' id='tabela'>
+    <thead>
+      <th>CRM</th>
+      <th>Nome</th>
+      <th>Email Dr</th>
+      <th>Atendimento</th>
+      <th class='text-center'>Ações</th>
+    </thead>
+    <tbody id='tbody'>
+      {{#each resultadoMedico as |medico|}}
+        {{#if medico.ativo}}
+                <tr class="table-success">
+
+          <td>{{medico.crm}}</td>
+          <td>Dr(a). {{medico.nome}}</td>
+          <td>{{medico.email}}</td>
+          <td>{{medico.atendimento}}</td>
+          <td class='d-flex justify-content-evenly'>
+            <a
+              href='/doctors/editDoctor/{{medico._id}}'
+              class='bi bi-pencil-square fs-4'
+            ></a>
+            <a
+              href='/doctors/deleteDoctor/{{medico._id}}'
+              class='bi bi-trash fs-4'
+            ></a>
+          </td>
+        </tr>
+        {{else}}
+                <tr class="table-danger">
+
+          <td>{{medico.crm}}</td>
+          <td>Dr(a). {{medico.nome}}</td>
+          <td>{{medico.email}}</td>
+          <td>{{medico.atendimento}}</td>
+          <td class='d-flex justify-content-evenly'>
+            <a
+              href='/doctors/editDoctor/{{medico._id}}'
+              class='bi bi-pencil-square fs-4'
+            ></a>
+            <a
+              href='/doctors/deleteDoctor/{{medico._id}}'
+              class='bi bi-trash fs-4'
+            ></a>
+          </td>
+        </tr>
+        {{/if}}
+      {{/each}}
+
+    </tbody>
+  </table>
+</section>
+
+
+</div>
