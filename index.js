@@ -27,7 +27,7 @@ const hbs = handle.create({
 });
 
 //declaração da porta que está sendo usada
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // requisição var global acesso
 const { eADMIN } = require('./helpers/eADMIN');
