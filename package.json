@@ -1,32 +1,32 @@
 {
-  "name": "medcrud",
-  "version": "1.0.0",
-  "description": "<h1 align=\"center\">Hospital System 💊</h1>\r <h3 align=\"center\">Landing page de serviços de hospitalares</h3>",
-  "main": "index.js",
-  "engines": {
-    "node": "14.16.0"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Power-g7/medCRUD.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Power-g7/medCRUD/issues"
-  },
-  "homepage": "https://github.com/Power-g7/medCRUD#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^6.0.2",
-    "heroku": "^7.59.2",
-    "mongodb": "^4.2.1"
-  }
+    "name": "medcrud",
+    "version": "1.0.0",
+    "description": "<h1 align=\"center\">Hospital System 💊</h1>\r <h3 align=\"center\">Landing page de serviços de hospitalares</h3>",
+    "main": "index.js",
+    "engines": {
+        "node": "14.16.0"
+    },
+    "scripts": {
+        "start": "node index",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Power-g7/medCRUD.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Power-g7/medCRUD/issues"
+    },
+    "homepage": "https://github.com/Power-g7/medCRUD#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^6.0.2",
+        "heroku": "^7.59.2",
+        "mongodb": "^4.2.1"
+    }
 }
