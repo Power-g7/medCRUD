@@ -8,8 +8,7 @@
     },
     "scripts": {
         "start": "node index",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "heroku-postbuild": "cd medcrud && npm i && npm start"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
