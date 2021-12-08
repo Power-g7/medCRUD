@@ -29,6 +29,8 @@ const hbs = handle.create({
 //declaração da porta que está sendo usada
 const port = process.env.PORT || 3000;
 
+const host = process.env.HOST || '0.0.0.0';
+
 // requisição var global acesso
 const { eADMIN } = require('./helpers/eADMIN');
 const { eUSER } = require('./helpers/eUSER');
@@ -134,6 +136,6 @@ app.get('/userList', eUSER, (request, response) => {
 //////// FIM - ROTAS RELACIONADA AO USER
 
 //////// CONECTANDO COM O SERVIDOR
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log('Servidor Rodando.');
 });
