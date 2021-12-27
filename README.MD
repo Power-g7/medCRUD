@@ -1,9 +1,9 @@
 <h1 align="center">Hospital System 💊</h1>
 <h3 align="center">Landing page de serviços de hospitalares</h3>
 
-<p align="center"><a href="https://medcrudg7-soulcode.herokuapp.com/" > --> Finalizado 🚀</a><ADM>
+<p align="center"><a href="https://medcrudg7-soulcode.herokuapp.com/" >  Finalizado 🚀</a><ADM>
 
-<!-- ![banner](https://github.com/jordanruan/centralcinema/blob/main/assets/mockup-desktop.png?raw=true) -->
+![banner](https://github.com/jordanruan/medCRUD/blob/main/public/img/2.png?raw=true) 
 
 ---
 
